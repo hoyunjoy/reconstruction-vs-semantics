@@ -13,6 +13,7 @@ Pillow==10.3.0
 scikit-image==0.19.3
 scipy==1.13.1
 matplotlib==3.5.3
+contourpy<1.4
 gym==0.23.1
 pygame==2.5.2
 pymunk==6.8.0

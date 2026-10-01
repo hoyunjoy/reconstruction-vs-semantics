@@ -155,7 +155,7 @@ def compute_representation_stats(
 @hydra.main(
     version_base=None,
     config_path="../conf",
-    config_name="experiment/latent_stats",
+    config_name="experiment/latent_stats_vit_dino",
 )
 def main(cfg: DictConfig) -> None:
     device = torch.device(str(cfg.device))
