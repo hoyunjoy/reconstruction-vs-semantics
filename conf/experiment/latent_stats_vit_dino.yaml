@@ -1,0 +1,27 @@
+# @package _global_
+
+seed: 42
+device: cuda
+minimum_std: 1.0e-6
+resume: true
+log_every: 25
+output_dir: ${oc.env:DINO_WM_CACHE_ROOT,feature_cache}/normalization_seed42
+
+dataset:
+  manifest_path: artifacts/splits/pusht_1000_seed42.json
+  sequence_lengths_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/seq_lengths.pkl
+
+representations:
+  vit_ae_s14:
+    cache_root: ${oc.env:DINO_WM_CACHE_ROOT,feature_cache}/vit_ae_s14_seed42_v1
+    stats_filename: vit_ae_s14.pt
+  dinov2_vits14:
+    cache_root: ${oc.env:DINO_WM_CACHE_ROOT,feature_cache}/dinov2_vits14_seed42
+    stats_filename: dinov2_vits14.pt
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

@@ -1,0 +1,11 @@
+_target_: models.latent_dynamics.FactorizedActionDynamics
+num_tokens: 256
+latent_dim: 384
+action_dim: 2
+context_length: ${dataset.context_length}
+temporal_layers: 1
+spatial_depth: 4
+spatial_heads: 6
+spatial_mlp_dim: 1536
+action_hidden_dim: 128
+dropout: 0.1

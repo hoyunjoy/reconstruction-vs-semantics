@@ -1,0 +1,65 @@
+# @package _global_
+
+defaults:
+  - /cached_representation: vit_ae_s14_earlystop
+  - /state_probe: linear_spatial
+  - _self_
+
+seed: 42
+
+dynamics_checkpoint_path: ${oc.env:DINO_WM_CHECKPOINT_ROOT,checkpoints}/dynamics/${cached_representation.name}_seed42/best.pt
+
+dataset:
+  manifest_path: artifacts/splits/pusht_1000_seed42.json
+  sequence_lengths_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/seq_lengths.pkl
+  states_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/states.pth
+  velocities_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/velocities.pth
+  actions_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/rel_actions.pth
+  context_length: 3
+  frames_per_trajectory:
+    train: 32
+    validation: 16
+    test: 16
+  rollout_windows_per_trajectory:
+    validation: 8
+    test: 8
+  trajectories_per_batch: 4
+  rollout_trajectories_per_batch: 2
+  num_workers: 4
+  action_scale: 100.0
+  action_mean: [-0.0087, 0.0068]
+  action_std: [0.2019, 0.2002]
+
+target_normalization:
+  minimum_std: 1.0e-6
+
+training:
+  epochs: 200
+  learning_rate: 1.0e-3
+  min_lr: 1.0e-6
+  weight_decay: 1.0e-5
+  gradient_clip_norm: 1.0
+  amp: true
+  resume: true
+  early_stopping_patience: 20
+  early_stopping_min_delta: 1.0e-5
+  max_batches_per_epoch: null
+
+evaluation:
+  horizons: [1, 5, 10]
+  max_batches: null
+
+outputs:
+  checkpoint_dir: ${oc.env:DINO_WM_CHECKPOINT_ROOT,checkpoints}/state_probe/${cached_representation.name}_seed42
+  output_dir: ${oc.env:DINO_WM_OUTPUT_ROOT,outputs}/state_probe/${cached_representation.name}_seed42
+  best_checkpoint_name: best.pt
+  last_checkpoint_name: last.pt
+  history_name: history.json
+  metrics_name: metrics.json
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

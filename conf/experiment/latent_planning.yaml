@@ -1,0 +1,53 @@
+# @package _global_
+defaults:
+  - /cached_representation: vit_ae_s14_earlystop
+  - _self_
+
+seed: 42
+amp: true
+dynamics_checkpoint_path: ${oc.env:DINO_WM_CHECKPOINT_ROOT,checkpoints}/dynamics/${cached_representation.name}_seed42/best.pt
+
+encoder:
+  vit_ae_checkpoint: ${oc.env:DINO_WM_CHECKPOINT_ROOT,checkpoints}/vit_ae_s14_seed42_v1/best.pt
+  dino_name: dinov2_vits14
+  dino_feature_key: x_norm_patchtokens
+
+dataset:
+  manifest_path: artifacts/splits/pusht_1000_seed42.json
+  sequence_lengths_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/seq_lengths.pkl
+  states_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/states.pth
+  velocities_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/velocities.pth
+  actions_path: ${oc.env:DINO_WM_DATA_ROOT,data}/pusht_noise/train/rel_actions.pth
+  context_length: 3
+  action_scale: 100.0
+  action_mean: [-0.0087, 0.0068]
+  action_std: [0.2019, 0.2002]
+
+tasks:
+  manifest_path: artifacts/planning/pusht_test_h10_moving_seed42.json
+  count: 20
+  max_tasks: null
+  execution_steps: 10
+  minimum_block_position_change_px: 10.0
+  minimum_block_angle_change_degrees: 10.0
+
+cem:
+  horizon: 10
+  num_samples: 128
+  num_elites: 16
+  iterations: 5
+  initial_std: 1.0
+  minimum_std: 0.05
+  action_clip: 3.0
+  smoothing: 0.1
+
+outputs:
+  output_dir: ${oc.env:DINO_WM_OUTPUT_ROOT,outputs}/planning/${cached_representation.name}_seed42
+  metrics_name: metrics.json
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

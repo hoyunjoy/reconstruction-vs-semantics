@@ -63,4 +63,3 @@ dependencies:
     - transformers==4.17.0
     - typing-extensions==4.1.1
     - urllib3==1.26.8
-prefix: /private/home/surajn/.conda/envs/r3m_base

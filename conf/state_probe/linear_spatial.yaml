@@ -1,0 +1,6 @@
+_target_: models.state_probe.SpatialLinearStateProbe
+num_tokens: 256
+latent_dim: 384
+target_dim: 8
+grid_size: 16
+pool_sizes: [1, 2, 4]

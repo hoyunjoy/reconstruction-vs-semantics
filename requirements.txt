@@ -1,0 +1,23 @@
+# Minimal environment for the PushT ViT-AE/DINOv2 comparison.
+# PyTorch wheels are platform/CUDA specific; install the correct build first
+# when the default pip index does not match your system.
+torch==2.3.0
+torchvision==0.18.0
+numpy==1.26.4
+hydra-core==1.2.0
+omegaconf==2.3.0
+einops==0.4.1
+decord==0.6.0
+opencv-python==4.6.0.66
+Pillow==10.3.0
+scikit-image==0.19.3
+scipy==1.13.1
+matplotlib==3.5.3
+gym==0.23.1
+pygame==2.5.2
+pymunk==6.8.0
+shapely==2.0.3
+imageio==2.34.1
+psutil==5.9.8
+tqdm==4.66.4
+pytest==8.2.1

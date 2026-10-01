@@ -1,0 +1,412 @@
+{
+  "algorithm": "enumerate moving-block windows; numpy.default_rng(seed); choice without replacement",
+  "candidate_count": 5265,
+  "context_length": 3,
+  "execution_steps": 10,
+  "minimum_block_angle_change_degrees": 10.0,
+  "minimum_block_position_change_px": 10.0,
+  "seed": 42,
+  "source_split": "test",
+  "tasks": [
+    {
+      "source_index": 16108,
+      "start": 97
+    },
+    {
+      "source_index": 2846,
+      "start": 71
+    },
+    {
+      "source_index": 14125,
+      "start": 29
+    },
+    {
+      "source_index": 5699,
+      "start": 98
+    },
+    {
+      "source_index": 16108,
+      "start": 148
+    },
+    {
+      "source_index": 7521,
+      "start": 142
+    },
+    {
+      "source_index": 7803,
+      "start": 34
+    },
+    {
+      "source_index": 1541,
+      "start": 84
+    },
+    {
+      "source_index": 8614,
+      "start": 58
+    },
+    {
+      "source_index": 7914,
+      "start": 81
+    },
+    {
+      "source_index": 12889,
+      "start": 89
+    },
+    {
+      "source_index": 16244,
+      "start": 42
+    },
+    {
+      "source_index": 16108,
+      "start": 16
+    },
+    {
+      "source_index": 13435,
+      "start": 14
+    },
+    {
+      "source_index": 5775,
+      "start": 12
+    },
+    {
+      "source_index": 14372,
+      "start": 89
+    },
+    {
+      "source_index": 634,
+      "start": 91
+    },
+    {
+      "source_index": 1267,
+      "start": 25
+    },
+    {
+      "source_index": 15739,
+      "start": 169
+    },
+    {
+      "source_index": 16681,
+      "start": 36
+    },
+    {
+      "source_index": 1166,
+      "start": 75
+    },
+    {
+      "source_index": 482,
+      "start": 21
+    },
+    {
+      "source_index": 6031,
+      "start": 41
+    },
+    {
+      "source_index": 2695,
+      "start": 54
+    },
+    {
+      "source_index": 12249,
+      "start": 140
+    },
+    {
+      "source_index": 634,
+      "start": 71
+    },
+    {
+      "source_index": 989,
+      "start": 106
+    },
+    {
+      "source_index": 17438,
+      "start": 47
+    },
+    {
+      "source_index": 5518,
+      "start": 65
+    },
+    {
+      "source_index": 8046,
+      "start": 98
+    },
+    {
+      "source_index": 18146,
+      "start": 54
+    },
+    {
+      "source_index": 6649,
+      "start": 35
+    },
+    {
+      "source_index": 7914,
+      "start": 27
+    },
+    {
+      "source_index": 12880,
+      "start": 51
+    },
+    {
+      "source_index": 2442,
+      "start": 33
+    },
+    {
+      "source_index": 14630,
+      "start": 66
+    },
+    {
+      "source_index": 9945,
+      "start": 63
+    },
+    {
+      "source_index": 9636,
+      "start": 11
+    },
+    {
+      "source_index": 5493,
+      "start": 51
+    },
+    {
+      "source_index": 7521,
+      "start": 92
+    },
+    {
+      "source_index": 18145,
+      "start": 18
+    },
+    {
+      "source_index": 18386,
+      "start": 58
+    },
+    {
+      "source_index": 6649,
+      "start": 6
+    },
+    {
+      "source_index": 8843,
+      "start": 19
+    },
+    {
+      "source_index": 16108,
+      "start": 111
+    },
+    {
+      "source_index": 7339,
+      "start": 25
+    },
+    {
+      "source_index": 310,
+      "start": 121
+    },
+    {
+      "source_index": 16060,
+      "start": 155
+    },
+    {
+      "source_index": 5518,
+      "start": 43
+    },
+    {
+      "source_index": 1166,
+      "start": 84
+    },
+    {
+      "source_index": 3338,
+      "start": 28
+    },
+    {
+      "source_index": 9945,
+      "start": 49
+    },
+    {
+      "source_index": 14372,
+      "start": 31
+    },
+    {
+      "source_index": 2353,
+      "start": 42
+    },
+    {
+      "source_index": 16108,
+      "start": 130
+    },
+    {
+      "source_index": 5699,
+      "start": 70
+    },
+    {
+      "source_index": 482,
+      "start": 8
+    },
+    {
+      "source_index": 16244,
+      "start": 183
+    },
+    {
+      "source_index": 2832,
+      "start": 119
+    },
+    {
+      "source_index": 3284,
+      "start": 39
+    },
+    {
+      "source_index": 8843,
+      "start": 108
+    },
+    {
+      "source_index": 2353,
+      "start": 61
+    },
+    {
+      "source_index": 7521,
+      "start": 34
+    },
+    {
+      "source_index": 860,
+      "start": 103
+    },
+    {
+      "source_index": 5493,
+      "start": 60
+    },
+    {
+      "source_index": 14372,
+      "start": 54
+    },
+    {
+      "source_index": 634,
+      "start": 18
+    },
+    {
+      "source_index": 1715,
+      "start": 117
+    },
+    {
+      "source_index": 7638,
+      "start": 20
+    },
+    {
+      "source_index": 18145,
+      "start": 61
+    },
+    {
+      "source_index": 16681,
+      "start": 35
+    },
+    {
+      "source_index": 5518,
+      "start": 49
+    },
+    {
+      "source_index": 4927,
+      "start": 31
+    },
+    {
+      "source_index": 3904,
+      "start": 21
+    },
+    {
+      "source_index": 9523,
+      "start": 79
+    },
+    {
+      "source_index": 16108,
+      "start": 80
+    },
+    {
+      "source_index": 3904,
+      "start": 54
+    },
+    {
+      "source_index": 17438,
+      "start": 70
+    },
+    {
+      "source_index": 9751,
+      "start": 91
+    },
+    {
+      "source_index": 16060,
+      "start": 116
+    },
+    {
+      "source_index": 18145,
+      "start": 38
+    },
+    {
+      "source_index": 16244,
+      "start": 38
+    },
+    {
+      "source_index": 16681,
+      "start": 27
+    },
+    {
+      "source_index": 16108,
+      "start": 46
+    },
+    {
+      "source_index": 11818,
+      "start": 25
+    },
+    {
+      "source_index": 17635,
+      "start": 42
+    },
+    {
+      "source_index": 310,
+      "start": 57
+    },
+    {
+      "source_index": 14125,
+      "start": 61
+    },
+    {
+      "source_index": 18659,
+      "start": 40
+    },
+    {
+      "source_index": 7521,
+      "start": 139
+    },
+    {
+      "source_index": 9650,
+      "start": 89
+    },
+    {
+      "source_index": 12114,
+      "start": 140
+    },
+    {
+      "source_index": 3284,
+      "start": 57
+    },
+    {
+      "source_index": 2695,
+      "start": 111
+    },
+    {
+      "source_index": 14372,
+      "start": 60
+    },
+    {
+      "source_index": 7381,
+      "start": 33
+    },
+    {
+      "source_index": 2331,
+      "start": 37
+    },
+    {
+      "source_index": 6238,
+      "start": 61
+    },
+    {
+      "source_index": 16108,
+      "start": 143
+    },
+    {
+      "source_index": 634,
+      "start": 88
+    }
+  ]
+}

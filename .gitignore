@@ -1,4 +1,59 @@
-__pycache__
-*.pyc
-outputs
-plan_outputs
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments and editor state
+.venv/
+venv/
+venvs/
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Hydra, experiment tracking, and runtime state
+.hydra/
+multirun/
+wandb/
+logs/
+*.log
+*.pid
+nohup.out
+
+# Data, features, learned weights, and generated experiment output
+data/
+feature_cache/
+checkpoints/
+outputs/
+plan_outputs/
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.npy
+*.npz
+
+# Generated plots/tables (source plotting code remains tracked)
+metrics/state_probe_seed42_figures/
+metrics/training_saturation/
+
+# Archives and temporary files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tmp
+*.temp
+*.bak
+*.bak_*
+*~

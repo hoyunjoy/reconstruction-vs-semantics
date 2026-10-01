@@ -1,0 +1,3 @@
+name: dinov2_vits14_earlystop
+cache_root: ${oc.env:DINO_WM_CACHE_ROOT,feature_cache}/dinov2_vits14_seed42
+stats_path: ${oc.env:DINO_WM_CACHE_ROOT,feature_cache}/normalization_seed42/dinov2_vits14.pt
