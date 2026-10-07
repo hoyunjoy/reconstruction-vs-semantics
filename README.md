@@ -30,7 +30,7 @@ rollouts, and plans better under matched downstream conditions.
 |---|---:|---:|
 | Reconstruction PSNR (dB) | 38.024 | **45.360** |
 | Reconstruction SSIM | 0.9891 | **0.9969** |
-| Reconstruction LPIPS-VGG | 0.01880 | **0.00756** |
+| Reconstruction LPIPS-VGG | 0.01877 | **0.00756** |
 | Dynamics validation normalized MSE | **0.02057** | 0.03127 |
 | Goal-pose success, 100 planning tasks | **92%** | 40% |
 | Final block overlap >= 0.95 | 32% | 27% |
@@ -84,6 +84,21 @@ wheel first and then install the remaining requirements. The first DINOv2 or
 ViT-AE run downloads the official `facebookresearch/dinov2` Torch Hub code and,
 for DINOv2, pretrained weights. An offline run can pass a local DINOv2 checkout
 to `--torch-hub-repo` for ViT-AE training and use a populated Torch Hub cache.
+
+## Quick installation checks
+
+Fast checks that do not require the dataset or checkpoints:
+
+```bash
+python -m compileall -q datasets metrics models planning scripts
+python -m pytest -q
+python scripts/train_vit_autoencoder.py --help
+python scripts/cache_vit_ae_features.py --help
+python scripts/create_pusht_split.py --help
+```
+
+GPU/data-dependent training and evaluation require the external artifacts
+described above.
 
 ## Paths and data preparation
 
@@ -171,21 +186,7 @@ python scripts/compute_latent_stats.py \
 Statistics are computed only from the 800 training trajectories. Cached raw
 latents are not modified; normalization is applied when they are loaded.
 
-### 4. Train matched action-conditioned dynamics
-
-The model consumes three past latent frames and 2-D actions. Both
-representations use the same 8,282,880-parameter architecture. The committed
-configuration uses a 100-epoch cap and validation early stopping (patience 15).
-
-```bash
-python scripts/train_latent_dynamics.py \
-  cached_representation=vit_ae_s14_earlystop
-
-python scripts/train_latent_dynamics.py \
-  cached_representation=dinov2_vits14_earlystop
-```
-
-### 5. Train matched reconstruction decoders and evaluate reconstruction
+### 4. Train matched reconstruction decoders and evaluate reconstruction
 
 Both frozen encoders are evaluated with the same decoder architecture, data
 split, loss, and image preprocessing.
@@ -200,6 +201,20 @@ python scripts/train_reconstruction_probe.py \
 
 The resulting `metrics.json` files report PSNR, SSIM, and LPIPS-VGG; the output
 directory also contains a reconstruction grid.
+
+### 5. Train matched action-conditioned dynamics
+
+The model consumes three past latent frames and 2-D actions. Both
+representations use the same 8,282,880-parameter architecture. The committed
+configuration uses a 100-epoch cap and validation early stopping (patience 15).
+
+```bash
+python scripts/train_latent_dynamics.py \
+  cached_representation=vit_ae_s14_earlystop
+
+python scripts/train_latent_dynamics.py \
+  cached_representation=dinov2_vits14_earlystop
+```
 
 ### 6. Train linear probes and evaluate dynamics rollouts
 
@@ -241,21 +256,6 @@ python scripts/evaluate_latent_planning.py \
   outputs.output_dir="$DINO_WM_OUTPUT_ROOT/planning/dinov2_vits14_earlystop_seed42_n100"
 ```
 
-## Validation
-
-Fast checks that do not require the dataset or checkpoints:
-
-```bash
-python -m compileall -q datasets metrics models planning scripts
-python -m pytest -q
-python scripts/train_vit_autoencoder.py --help
-python scripts/cache_vit_ae_features.py --help
-python scripts/create_pusht_split.py --help
-```
-
-GPU/data-dependent training and evaluation require the external artifacts
-described above.
-
 ## Scope and limitations
 
 - All reported results use a single seed (42) and the PushT environment.
@@ -281,3 +281,4 @@ The base world-model and PushT code comes from DINO-WM:
   url={https://arxiv.org/abs/2411.04983}
 }
 ```
+
