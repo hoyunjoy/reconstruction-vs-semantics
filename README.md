@@ -28,10 +28,10 @@ rollouts, and plans better under matched downstream conditions.
 
 | Metric (seed 42) | DINOv2 | ViT-AE |
 |---|---:|---:|
-| Reconstruction PSNR (dB) | 22.692 | **45.360** |
-| Reconstruction SSIM | 0.9031 | **0.9969** |
-| Reconstruction LPIPS-VGG | 0.09796 | **0.00756** |
-| Dynamics validation normalized MSE | **0.00717** | 0.03127 |
+| Reconstruction PSNR (dB) | 38.024 | **45.360** |
+| Reconstruction SSIM | 0.9891 | **0.9969** |
+| Reconstruction LPIPS-VGG | 0.01880 | **0.00756** |
+| Dynamics validation normalized MSE | **0.02057** | 0.03127 |
 | Goal-pose success, 100 planning tasks | **92%** | 40% |
 | Final block overlap >= 0.95 | 32% | 27% |
 
