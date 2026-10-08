@@ -1,7 +1,7 @@
 # @package _global_
 
 defaults:
-  - /cached_representation: vit_ae_s14_earlystop
+  - /cached_representation: vit_ae_s14
   - /state_probe: linear_spatial
   - _self_
 
@@ -63,3 +63,4 @@ hydra:
   output_subdir: null
   job:
     chdir: false
+
