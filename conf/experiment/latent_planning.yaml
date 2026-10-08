@@ -24,8 +24,8 @@ dataset:
   action_std: [0.2019, 0.2002]
 
 tasks:
-  manifest_path: artifacts/planning/pusht_test_h10_moving_seed42.json
-  count: 20
+  manifest_path: artifacts/planning/pusht_test_h10_moving_seed42_n100.json
+  count: 100
   max_tasks: null
   execution_steps: 10
   minimum_block_position_change_px: 10.0
