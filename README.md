@@ -1,4 +1,4 @@
-# Does Reconstruction Ensure Physical Semantics?
+# Does Reconstruction Ensure Control-Relevant Semantics?
 
 This repository contains a controlled PushT study of whether a representation
 that reconstructs pixels well also preserves the physical information needed
