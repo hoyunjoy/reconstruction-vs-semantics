@@ -193,10 +193,10 @@ split, loss, and image preprocessing.
 
 ```bash
 python scripts/train_reconstruction_probe.py \
-  cached_representation=vit_ae_s14_earlystop
+  cached_representation=vit_ae_s14
 
 python scripts/train_reconstruction_probe.py \
-  cached_representation=dinov2_vits14_earlystop
+  cached_representation=dinov2_vits14
 ```
 
 The resulting `metrics.json` files report PSNR, SSIM, and LPIPS-VGG; the output
@@ -210,10 +210,10 @@ configuration uses a 100-epoch cap and validation early stopping (patience 15).
 
 ```bash
 python scripts/train_latent_dynamics.py \
-  cached_representation=vit_ae_s14_earlystop
+  cached_representation=vit_ae_s14
 
 python scripts/train_latent_dynamics.py \
-  cached_representation=dinov2_vits14_earlystop
+  cached_representation=dinov2_vits14
 ```
 
 ### 6. Train linear probes and evaluate dynamics rollouts
@@ -244,13 +244,13 @@ both representations:
 
 ```bash
 python scripts/evaluate_latent_planning.py \
-  cached_representation=vit_ae_s14_earlystop \
+  cached_representation=vit_ae_s14 \
   tasks.manifest_path=artifacts/planning/pusht_test_h10_moving_seed42_n100.json \
   tasks.count=100 tasks.max_tasks=100 \
   outputs.output_dir="$DINO_WM_OUTPUT_ROOT/planning/vit_ae_s14_earlystop_seed42_n100"
 
 python scripts/evaluate_latent_planning.py \
-  cached_representation=dinov2_vits14_earlystop \
+  cached_representation=dinov2_vits14 \
   tasks.manifest_path=artifacts/planning/pusht_test_h10_moving_seed42_n100.json \
   tasks.count=100 tasks.max_tasks=100 \
   outputs.output_dir="$DINO_WM_OUTPUT_ROOT/planning/dinov2_vits14_earlystop_seed42_n100"
@@ -281,4 +281,5 @@ The base world-model and PushT code comes from DINO-WM:
   url={https://arxiv.org/abs/2411.04983}
 }
 ```
+
 
