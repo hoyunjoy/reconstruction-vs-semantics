@@ -18,10 +18,11 @@ run_probe() {
 }
 
 # Run sequentially so both experiments receive the full GPU and the same conditions.
-run_probe vit_ae_s14_earlystop "$@"
-run_probe dinov2_vits14_earlystop "$@"
+run_probe vit_ae_s14 "$@"
+run_probe dinov2_vits14 "$@"
 
 "${PYTHON}" scripts/summarize_state_probe_comparison.py
 
 echo "State-probe comparison completed."
 echo "Combined summary: ${DINO_WM_OUTPUT_ROOT:-outputs}/state_probe/vit_ae_vs_dino_earlystop_seed42_summary.json"
+
