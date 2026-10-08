@@ -93,7 +93,7 @@ Fast checks that do not require the dataset or checkpoints:
 python -m compileall -q datasets metrics models planning scripts
 python -m pytest -q
 python scripts/train_vit_autoencoder.py --help
-python scripts/cache_vit_ae_features.py --help
+python scripts/cache_vit_ae_s14_features.py --help
 python scripts/create_pusht_split.py --help
 ```
 
@@ -162,7 +162,7 @@ python scripts/train_vit_autoencoder.py \
 
 ```bash
 # ViT-AE: always cache from the best validation checkpoint.
-python scripts/cache_vit_ae_features.py \
+python scripts/cache_vit_ae_s14_features.py \
   --checkpoint "$DINO_WM_CHECKPOINT_ROOT/vit_ae_s14_seed42_v1/best.pt" \
   --data-root "$DINO_WM_DATA_ROOT/pusht_noise" \
   --manifest artifacts/splits/pusht_1000_seed42.json \
@@ -170,7 +170,7 @@ python scripts/cache_vit_ae_features.py \
   --resume
 
 # Frozen pretrained DINOv2-S/14.
-python scripts/cache_dino_manifest_features.py
+python scripts/cache_dinov2_vits14_features.py
 ```
 
 Each cache stores a `[time, 256, 384]` tensor per trajectory. Encoders remain
@@ -281,5 +281,4 @@ The base world-model and PushT code comes from DINO-WM:
   url={https://arxiv.org/abs/2411.04983}
 }
 ```
-
 
