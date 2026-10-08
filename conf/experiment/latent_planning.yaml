@@ -1,6 +1,6 @@
 # @package _global_
 defaults:
-  - /cached_representation: vit_ae_s14_earlystop
+  - /cached_representation: vit_ae_s14
   - _self_
 
 seed: 42
@@ -51,3 +51,4 @@ hydra:
   output_subdir: null
   job:
     chdir: false
+
