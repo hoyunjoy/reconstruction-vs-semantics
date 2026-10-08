@@ -225,14 +225,6 @@ then evaluates real latents and autoregressive dynamics rollouts at horizons 1,
 
 ```bash
 bash scripts/run_state_probe_comparison.sh
-python scripts/plot_state_probe_comparison.py
-```
-
-To redirect the generated comparison figures:
-
-```bash
-DINO_WM_FIGURE_ROOT=/path/to/figures \
-  python scripts/plot_state_probe_comparison.py
 ```
 
 ### 7. Run CEM + receding-horizon MPC planning
@@ -281,4 +273,3 @@ The base world-model and PushT code comes from DINO-WM:
   url={https://arxiv.org/abs/2411.04983}
 }
 ```
-
